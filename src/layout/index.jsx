@@ -1,11 +1,16 @@
+import Container from './Container';
 import Footer from './footer/Footer.layout';
-import Header from './header/Header.layout';
+import './layout.css';
 
 const Layout = ({ children }) => {
+  console.log('container');
   return (
     <>
-      <Header />
-      <main>{children}</main>
+      <main className='mainContainer'>
+        <Container />
+
+        {children}
+      </main>
       <Footer />
     </>
   );

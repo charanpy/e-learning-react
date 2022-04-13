@@ -2,6 +2,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  position: relative;
+  font-size: 2rem;
+}
+:root {
+  --light-100: #f8fafc;
+  --light-200: #f1f5f9;
+  --light-300: #e2e8f0;
+  --light-400: #94a3b8;
+  --light-500: #64748b;
+  --light-600: #475569;
+  --light-700: #334155;
+  --light-800: #1e293b;
+  --light-900: #0f172a;
+  --blue-600: #2563eb;
 }
 
 h1,
@@ -10,9 +29,14 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 .flex-row {
@@ -36,4 +60,13 @@ p {
 .centerAll {
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.cursor,
+li {
+  cursor: pointer;
 }
