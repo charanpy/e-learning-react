@@ -15,7 +15,7 @@ const LoginComponent = () => {
     <div className="login-component ">
       <div className="login-register">
         <div className="login-intro flex-row centerAll">
-          <img src="/library-logo.jpg" className="login-logo"></img>
+          <img src="/library-logo.png" className="login-logo"></img>
           <p className="login-intro">
             <span className="organization-name ">Name | </span>
             <span className="organization-platform">ePlatform</span>
