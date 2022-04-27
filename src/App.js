@@ -1,6 +1,6 @@
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Layout from './layout';
-import AppRoutes from './routes/AppRoutes';
+import { QueryClient, QueryClientProvider } from "react-query";
+import Layout from "./layout";
+import AppRoutes from "./routes/AppRoutes";
 
 const client = new QueryClient({
   defaultOptions: {
@@ -13,9 +13,9 @@ const client = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={client}>
-      <Layout>
-        <AppRoutes />
-      </Layout>
+      {/* <Layout> */}
+      <AppRoutes />
+      {/* </Layout> */}
     </QueryClientProvider>
   );
 };

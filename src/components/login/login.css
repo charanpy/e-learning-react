@@ -1,0 +1,20 @@
+.login-component{
+   background: url('/public/Login_BG.png') ;
+   min-height: 100vh;
+   background-position: center;
+   background-size: cover;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-form{
+    background: rgba(255,255,255,1);
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 20px 10px #e5e7ee;
+    border-radius: 5px;
+}
+.login-form-intro{
+    text-align: center;
+}
