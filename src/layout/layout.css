@@ -1,0 +1,11 @@
+.mainContainer {
+  margin-left: 20rem;
+  background: var(--light-100);
+  min-height: 100vh;
+}
+
+@media (max-width: 767px) {
+  .mainContainer {
+    margin-left: 0rem;
+  }
+}

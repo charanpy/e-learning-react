@@ -1,0 +1,83 @@
+.appNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20rem;
+}
+
+.navHeader {
+  min-height: 10vh;
+  border-bottom: 0.2px solid var(--light-200);
+}
+
+.navHeader h1 {
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+
+.navListContainer {
+  margin-top: 5rem;
+}
+
+.lContainer {
+  padding: 1.5rem 2rem;
+}
+
+.appMenu {
+  font-size: 1.5rem;
+  color: var(--light-500);
+}
+
+.navItem {
+  position: relative;
+  font-weight: 400;
+  color: var(--light-800);
+  font-size: 1.5rem;
+}
+
+.navItem::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #ecf3fc;
+  transition: all 300ms ease-in-out;
+}
+
+.navItem:hover::before {
+  width: 100%;
+}
+
+.navIcon {
+  fill: var(--light-500) !important;
+  margin-right: 0.6rem;
+}
+
+.navItem:hover {
+  border-left: 3px solid var(--blue-600);
+  color: var(--blue-600);
+}
+
+@media (max-width: 767px) {
+  .appNav {
+    display: none;
+  }
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: 1000000000;
+  height: 100%;
+  width: 17rem;
+}
+
+.mobileNav {
+  display: block !important;
+}
