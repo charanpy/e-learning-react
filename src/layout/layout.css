@@ -1,7 +1,12 @@
 .mainContainer {
-  margin-left: 20rem;
+  margin-left: 25rem;
   background: var(--light-100);
   min-height: 100vh;
+}
+
+.innerContainer {
+  padding: 2rem;
+  line-height: 5;
 }
 
 @media (max-width: 767px) {

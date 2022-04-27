@@ -3,10 +3,14 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
 import ErrorBoundary from "../components/ErrorBoundary";
+import Login from "../pages/login/Login.page";
 
 const HomePage = lazy(() => import("../pages/home/Home.page"));
 const DashboardPage = lazy(() => import("../pages/dashboard/Dashboard.page"));
-const Login = lazy(() => import("../pages/login/Login.page"));
+const NotFoundPage = lazy(() => import("../pages/not-found/NotFound.page"));
+const CourseDetails = lazy(() =>
+  import("../pages/course-details/CourseDetails.pages")
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -25,7 +29,6 @@ const AppRoutes = () => {
               }
             />
             <Route
-              exact
               path="/dashboard"
               element={
                 <PageTransition>
@@ -33,7 +36,39 @@ const AppRoutes = () => {
                 </PageTransition>
               }
             />
-            <Route exact path="/login" element={<Login />} />
+            <Route
+              path="/login"
+              element={
+                <PageTransition>
+                  <Login />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/dashboard/:id"
+              element={
+                <PageTransition>
+                  <DashboardPage />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="/course/:id"
+              element={
+                <PageTransition>
+                  <CourseDetails />
+                </PageTransition>
+              }
+            />
+            <Route
+              basename="dashboard"
+              path="*"
+              element={
+                <PageTransition>
+                  <NotFoundPage />
+                </PageTransition>
+              }
+            />
           </Routes>
         </AnimatePresence>
       </Suspense>

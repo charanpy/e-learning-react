@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 20rem;
+  width: 25rem;
 }
 
 .navHeader {
@@ -57,7 +57,7 @@
   margin-right: 0.6rem;
 }
 
-.navItem:hover {
+.active {
   border-left: 3px solid var(--blue-600);
   color: var(--blue-600);
 }
@@ -72,12 +72,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: white;
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1000000000;
   height: 100%;
-  width: 17rem;
+  width: 100%;
 }
 
 .mobileNav {
   display: block !important;
+  width: 22rem;
+  height: 100%;
+  background: white;
 }
