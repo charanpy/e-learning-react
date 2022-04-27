@@ -6,6 +6,10 @@ import ErrorBoundary from '../components/ErrorBoundary';
 
 const HomePage = lazy(() => import('../pages/home/Home.page'));
 const DashboardPage = lazy(() => import('../pages/dashboard/Dashboard.page'));
+const NotFoundPage = lazy(() => import('../pages/not-found/NotFound.page'));
+const CourseDetails = lazy(() =>
+  import('../pages/course-details/CourseDetails.pages')
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -13,26 +17,50 @@ const AppRoutes = () => {
     <ErrorBoundary>
       <Suspense fallback={<div>Loading</div>}>
         <AnimatePresence exitBeforeEnter initial={false}>
-        <Routes location={location} key={location.pathname}>
-          <Route
-            exact
-            path='/'
-            element={
-              <PageTransition>
-              <HomePage />
-              </PageTransition>
-            }
-          />
-          <Route
-            exact
-            path='/dashboard'
-            element={
-              <PageTransition>
-                <DashboardPage />
-              </PageTransition>
-            }
-          />
-        </Routes>
+          <Routes location={location} key={location.pathname}>
+            <Route
+              exact
+              path='/'
+              element={
+                <PageTransition>
+                  <HomePage />
+                </PageTransition>
+              }
+            />
+            <Route
+              path='/dashboard'
+              element={
+                <PageTransition>
+                  <DashboardPage />
+                </PageTransition>
+              }
+            />
+            <Route
+              path='/dashboard/:id'
+              element={
+                <PageTransition>
+                  <DashboardPage />
+                </PageTransition>
+              }
+            />
+            <Route
+              path='/course/:id'
+              element={
+                <PageTransition>
+                  <CourseDetails />
+                </PageTransition>
+              }
+            />
+            <Route
+              basename='dashboard'
+              path='*'
+              element={
+                <PageTransition>
+                  <NotFoundPage />
+                </PageTransition>
+              }
+            />
+          </Routes>
         </AnimatePresence>
       </Suspense>
     </ErrorBoundary>

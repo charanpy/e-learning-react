@@ -1,0 +1,25 @@
+.banner {
+  padding: 3rem 2.5rem;
+  background: linear-gradient(90deg, #310777 20%, #a44be1 80%);
+  border-radius: 5px;
+  color: white;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  line-height: 2;
+}
+
+.banner h1 {
+  font-size: 2.3rem;
+  font-weight: 600;
+}
+
+.banner p {
+  font-size: 1.5rem;
+  width: 30rem;
+  color: var(--light-300);
+}
+
+@media (max-width: 400px) {
+  .banner p {
+    width: 100%;
+  }
+}

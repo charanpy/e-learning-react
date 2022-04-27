@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MenuSVG from '../../components/shared/svg/Menu.svg';
-import SearchSVG from '../../components/shared/svg/Search.svg';
 import './header.css';
 
-const MainHeader = ({ handleToggle }) => {
-  console.log('header');
+const MainHeader = ({ handleToggle, header }) => {
   return (
     <header className='appHeader flex-row align'>
-      <div className='menuContainer' role='button' onClick={handleToggle}>
-        <MenuSVG />
-      </div>
-      <div className='searchContainer flex-row align'>
-        <SearchSVG className='searchIcon' />
-        <input className='searchInput' type='text' placeholder='Search...' />
+      <div className='flex-row align'>
+        <div className='menuContainer' role='button' onClick={handleToggle}>
+          <MenuSVG />
+        </div>
+
+        <h1 className='header'>{header}</h1>
       </div>
       <div className='profileImage flex-row centerAll'>
-        <p>A</p>
+        <Link to='/profile'>
+          <p>A</p>
+        </Link>
       </div>
     </header>
   );

@@ -1,9 +1,26 @@
 import React from 'react';
+import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import DashboardSVG from '../../components/shared/svg/Dashboard.svg';
 import ExploreSvg from '../../components/shared/svg/Explore.svg';
 import FavoriteSVG from '../../components/shared/svg/Favorite.svg';
 import MyCourseSVG from '../../components/shared/svg/MyCourse.svg';
 import VideoSVG from '../../components/shared/svg/Video.svg';
 import './navbar.css';
+
+const CustomLink = ({ children, to = '/video' }) => {
+  const resolved = useResolvedPath(to);
+  const match = useMatch({ path: resolved.pathname, end: true });
+
+  return (
+    <Link to={to}>
+      <li
+        className={`navItem flex-row align lContainer ${match ? 'active' : ''}`}
+      >
+        {children}
+      </li>
+    </Link>
+  );
+};
 
 const Navbar = ({ className = '' }) => {
   return (
@@ -15,22 +32,26 @@ const Navbar = ({ className = '' }) => {
         <div className='navListContainer'>
           <p className='appMenu lContainer'>MENU</p>
           <ul className='navList'>
-            <li className='navItem flex-row align lContainer'>
+            <CustomLink to='/dashboard'>
+              <DashboardSVG className='navIcon' />
+              Dashboard
+            </CustomLink>
+            <CustomLink>
               <ExploreSvg className='navIcon' />
               Explore Courses
-            </li>
-            <li className='navItem  flex-row align lContainer'>
+            </CustomLink>
+            <CustomLink>
               <MyCourseSVG className='navIcon' />
               My Courses
-            </li>
-            <li className='navItem  flex-row align lContainer'>
+            </CustomLink>
+            <CustomLink>
               <VideoSVG className='navIcon' />
               Videos
-            </li>
-            <li className='navItem  flex-row align lContainer'>
+            </CustomLink>
+            <CustomLink>
               <FavoriteSVG className='navIcon' />
               Favorite
-            </li>
+            </CustomLink>
           </ul>
         </div>
       </nav>

@@ -8,7 +8,6 @@
 
 body {
   position: relative;
-  font-size: 2rem;
 }
 :root {
   --light-100: #f8fafc;
@@ -21,6 +20,7 @@ body {
   --light-800: #1e293b;
   --light-900: #0f172a;
   --blue-600: #2563eb;
+  --blue-700: #0e7490;
 }
 
 h1,
@@ -33,10 +33,15 @@ p,
 ul {
   margin: 0;
   padding: 0;
+  font-size: 1.5rem;
 }
 
 li {
   list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .flex-row {
@@ -69,4 +74,19 @@ li {
 .cursor,
 li {
   cursor: pointer;
+}
+
+.ReactQueryDevtoolsPanel {
+  font-size: 5rem !important;
+}
+.ReactQueryDevtoolsPanel span {
+  font-size: 1.3rem;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.flt::first-letter {
+  text-transform: capitalize;
 }

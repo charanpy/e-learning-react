@@ -2,8 +2,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 const modal = {
   visible: { x: '0%' },
-  hidden: { x: '-100%' },
-  exit: { x: '-100%' },
+  hidden: { x: '-105%' },
+  exit: { x: '-105%' },
 };
 
 const Slider = ({ children, open, className }) => {

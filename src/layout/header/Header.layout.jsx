@@ -1,6 +1,9 @@
+
+import { useLocation } from 'react-router-dom';
 import './header.css';
 
 const Header = () => {
+  const location = useLocation();
   return (
     <header className='flex-row align appHeader'>
       <div>

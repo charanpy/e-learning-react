@@ -1,0 +1,197 @@
+.courseBanner {
+  padding: 5rem 15rem;
+  justify-content: space-between;
+  background: #1c1d1f;
+  line-height: 2.5;
+}
+
+.courseTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.courseDetailsImage {
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid white;
+}
+
+.courseDescription {
+  color: var(--light-200);
+  font-size: 1.7rem;
+  font-weight: 400;
+  width: 70%;
+}
+
+.courseDetailsInstructors {
+  color: var(--light-100);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.subheading {
+  font-weight: 500;
+  font-size: inherit;
+}
+.courseCard {
+  width: 30rem;
+  background: white;
+  position: absolute;
+  top: 10vh;
+  margin: 5rem 0;
+  right: 5rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.coursePrice {
+  color: black;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.courseInfo {
+  padding: 2rem;
+}
+
+.courseButton {
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  background: var(--blue-600);
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 5px;
+}
+.courseButton:hover {
+  background: var(--blue-700);
+}
+.courseResourceDescription {
+  position: relative;
+}
+.courseResourceDescription::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(228, 233, 242);
+  height: 1px;
+}
+
+.courseIncludes {
+  color: rgb(21, 26, 48);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.courseIncludeText {
+  font-size: 1.65rem;
+  color: rgb(21, 26, 48);
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.courseContentContainer {
+  margin: 5rem 1rem 5rem 15rem;
+  width: 50%;
+}
+
+.syllabus {
+  color: var(--light-900);
+  font-weight: 600;
+  font-size: 2.1rem;
+}
+
+.videoContainer {
+  margin-top: 2rem;
+  border: 1px solid #e4e9f2;
+  border-radius: 8px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 2px 4px 2px;
+}
+
+.video {
+  border-bottom: 1px solid #e4e9f2;
+  padding: 2rem;
+  color: var(--light-900);
+}
+
+.videoCount {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-right: 1.5rem;
+}
+
+.courseContentTitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--light-600);
+}
+
+@media (max-width: 1050px) {
+  .courseBanner {
+    flex-direction: column-reverse;
+  }
+  .courseDescription {
+    width: 100%;
+  }
+
+  .courseInfo {
+    padding: 0;
+  }
+  .courseCard {
+    position: relative;
+    width: 100%;
+
+    padding: 0;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .courseImg {
+    text-align: center;
+  }
+  .courseInfo {
+    justify-content: center;
+  }
+  .coursePrice {
+    color: white;
+  }
+  .courseResourceDescription {
+    display: none;
+  }
+  .courseDetailsImage {
+    border: none;
+    height: 350px;
+    width: 500px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .courseResourceDescription::before {
+    display: none;
+  }
+  .courseContentContainer {
+    margin: 5rem;
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .courseDetailsImage {
+    width: 100% !important;
+    object-fit: contain;
+    object-position: center;
+    height: 200px;
+  }
+  .courseBanner {
+    padding: 2rem;
+  }
+  .courseContentContainer {
+    margin: 2rem;
+  }
+}
