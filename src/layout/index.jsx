@@ -3,7 +3,7 @@ import Footer from './footer/Footer.layout';
 import './layout.css';
 
 const Layout = ({ children, header, showNav = true }) => {
-  console.log('container');
+  console.log('containerssss');
   return (
     <>
       <main className='mainContainer' style={!showNav ? { margin: 0 } : {}}>

@@ -37,12 +37,14 @@
 .courseContainer {
   line-height: 2;
   width: 250px;
-  /* margin-right: 1rem; */
+  margin-right: 1rem;
   margin-bottom: 5rem;
   padding: 1.3rem;
   border: 1px solid #e4e9f2;
   border-radius: 8px;
   transition: all 200ms linear;
+  height: 220px;
+  overflow: hidden;
 }
 
 .courseContainer:hover {
