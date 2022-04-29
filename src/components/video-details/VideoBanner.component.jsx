@@ -19,7 +19,11 @@ const VideoBannerComponent = () => {
   return (
     <div className="flex-row video-banner-component">
       <VideoDetailContainer video={data} currentVideo={currentVideo} />
-      <VideoContentComponent video={data} changeVideo={nextVideo} />
+      <VideoContentComponent
+        video={data}
+        changeVideo={nextVideo}
+        currentVideo={currentVideo}
+      />
     </div>
   );
 };
