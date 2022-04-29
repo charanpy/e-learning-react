@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
 import ErrorBoundary from "../components/ErrorBoundary";
 import PrivateRoute from "./PrivateRoutes";
+import VideoBannerComponent from "../components/video-details/VideoBanner.component";
 
 const HomePage = lazy(() => import("../pages/home/Home.page"));
 const DashboardPage = lazy(() => import("../pages/dashboard/Dashboard.page"));
@@ -72,6 +73,16 @@ const AppRoutes = () => {
                 <PrivateRoute>
                   <PageTransition>
                     <MyCoursePage />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/video/:id"
+              element={
+                <PrivateRoute>
+                  <PageTransition>
+                    <VideoBannerComponent />
                   </PageTransition>
                 </PrivateRoute>
               }

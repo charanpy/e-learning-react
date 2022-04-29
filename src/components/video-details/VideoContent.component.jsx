@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SearchSVG from "../shared/svg/Search.svg";
 
-const VideoContentComponent = () => {
+const VideoContentComponent = (props) => {
   const [search, setSearch] = useState(false);
   const setSearchState = () => {
     setSearch((toggle) => !toggle);
@@ -26,11 +26,18 @@ const VideoContentComponent = () => {
         )}
       </div>
       <div className="flex-col video-content-list">
-        <p className="video-content">React Installation</p>
-        <p className="video-content">Router</p>
-        <p className="video-content">Redux</p>
-        <p className="video-content">State</p>
-        <p className="video-content">Hooks</p>
+        {props.video.map((data, index) => {
+          console.log(data?.description);
+          return (
+            <p
+              className="video-content"
+              key={data._id}
+              onClick={() => props?.changeVideo(index)}
+            >
+              {data?.description}
+            </p>
+          );
+        })}
       </div>
     </div>
   );
