@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import PageTransition from './PageTransition';
 import ErrorBoundary from '../components/ErrorBoundary';
+import PrivateRoute from './PrivateRoutes';
 
 const HomePage = lazy(() => import('../pages/home/Home.page'));
 const DashboardPage = lazy(() => import('../pages/dashboard/Dashboard.page'));
@@ -13,6 +14,8 @@ const CourseDetails = lazy(() =>
 const ExploreCourse = lazy(() =>
   import('../pages/explore-course/ExploreCourse.page')
 );
+const LoginPage = lazy(() => import('../pages/login/Login.page'));
+const MyCoursePage = lazy(() => import('../pages/my-course/MyCourse.page'));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -33,39 +36,57 @@ const AppRoutes = () => {
             <Route
               path='/dashboard'
               element={
-                <PageTransition>
-                  <DashboardPage />
-                </PageTransition>
+                <PrivateRoute>
+                  <PageTransition>
+                    <DashboardPage />
+                  </PageTransition>
+                </PrivateRoute>
               }
             />
-            <Route
-              path='/dashboard/:id'
-              element={
-                <PageTransition>
-                  <DashboardPage />
-                </PageTransition>
-              }
-            />
+
             <Route
               path='/course/:id'
               element={
-                <PageTransition>
-                  <CourseDetails />
-                </PageTransition>
+                <PrivateRoute>
+                  <PageTransition>
+                    <CourseDetails />
+                  </PageTransition>
+                </PrivateRoute>
               }
             />
 
             <Route
               path='/explore'
               element={
+                <PrivateRoute>
+                  <PageTransition>
+                    <ExploreCourse />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/my-course'
+              element={
+                <PrivateRoute>
+                  <PageTransition>
+                    <MyCoursePage />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/auth'
+              element={
                 <PageTransition>
-                  <ExploreCourse />
+                  <LoginPage />
                 </PageTransition>
               }
             />
 
             <Route
-              basename='dashboard'
               path='*'
               element={
                 <PageTransition>
