@@ -1,12 +1,10 @@
 import { errorToaster } from './toast';
-
-const getToken = () => localStorage.getItem('eToken');
+import { getItem } from './token';
 
 const getHeaders = (method, isAuth = false) => {
   const headers = {};
-  if (method === 'GET') return;
-
-  if (isAuth) headers['authorization'] = getToken();
+  if (isAuth) headers['authorization'] = getItem();
+  if (method === 'GET') return headers;
 
   if (method === 'POST') {
     headers['Content-Type'] = 'application/json';
@@ -33,6 +31,7 @@ const request = async (
       : await fetch(`${apiURL}${endpoint}`, {
           headers,
           body: JSON.stringify(body),
+          method,
         });
 
   const data = await res.json();

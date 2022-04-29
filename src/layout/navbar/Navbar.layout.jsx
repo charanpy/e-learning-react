@@ -40,7 +40,7 @@ const Navbar = ({ className = '' }) => {
               <ExploreSvg className='navIcon' />
               Explore Courses
             </CustomLink>
-            <CustomLink>
+            <CustomLink to='/my-course'>
               <MyCourseSVG className='navIcon' />
               My Courses
             </CustomLink>

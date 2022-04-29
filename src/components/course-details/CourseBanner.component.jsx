@@ -1,9 +1,9 @@
 import React from 'react';
 import courseImage from '../../assets/course.jpg';
-import Button from '../shared/button/Button.component';
 import NoteSVG from '../shared/svg/Note.svg';
 import PlusSVG from '../shared/svg/Plus.svg';
 import TickSVG from '../shared/svg/Tick.svg';
+import CourseButton from './CourseButton.component';
 import formatDate from './helper';
 
 const CourseBanner = ({ course }) => {
@@ -33,7 +33,8 @@ const CourseBanner = ({ course }) => {
         <figcaption className='flex-col'>
           <div className='courseInfo flex-col'>
             <h1 className='courseTitle coursePrice'>₹ {course?.price}</h1>
-            <Button className='courseButton cursor'>Go To Course</Button>
+            {/* <Button className='courseButton cursor'>Go To Course</Button> */}
+            <CourseButton id={course?._id} />
           </div>
           <div className='courseInfo courseResourceDescription'>
             <h1 className='courseIncludes'>What's included</h1>

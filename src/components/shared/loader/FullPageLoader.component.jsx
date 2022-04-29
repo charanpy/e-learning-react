@@ -2,11 +2,11 @@ import React from 'react';
 import Loader from './Loader.component';
 import './loader.css';
 
-const FullPageLoader = () => {
+const FullPageLoader = ({ text }) => {
   return (
-    <div className='fullPageLoader'>
+    <div className='fullPageLoader container flex-col align justify'>
       <Loader />
-      <h1 className='text-white text-xl'>Loading...</h1>
+      <h1 className='text-white text-xl'>{text || 'Loading...'}</h1>
     </div>
   );
 };

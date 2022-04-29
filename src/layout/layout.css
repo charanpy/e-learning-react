@@ -6,7 +6,6 @@
 
 .innerContainer {
   padding: 2rem;
-  line-height: 5;
 }
 
 @media (max-width: 767px) {

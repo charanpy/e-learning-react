@@ -91,14 +91,19 @@ li {
   text-transform: capitalize;
 }
 
-button {
+button,
+input {
   font-family: inherit;
+}
+button {
   cursor: pointer;
 }
-
 .Toastify__toast-container {
   z-index: 1000000000001111 !important;
 }
 .Toastify__toast-container div {
   font-size: 1.5rem !important;
+}
+.m-sm {
+  margin-top: 3rem;
 }
