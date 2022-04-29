@@ -12,6 +12,9 @@ const NotFoundPage = lazy(() => import("../pages/not-found/NotFound.page"));
 const CourseDetails = lazy(() =>
   import("../pages/course-details/CourseDetails.pages")
 );
+const ExploreCourse = lazy(() =>
+  import('../pages/explore-course/ExploreCourse.page')
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -61,6 +64,16 @@ const AppRoutes = () => {
                 </PageTransition>
               }
             />
+
+            <Route
+              path='/explore'
+              element={
+                <PageTransition>
+                  <ExploreCourse />
+                </PageTransition>
+              }
+            />
+
             <Route
               path="/video"
               element={

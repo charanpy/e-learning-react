@@ -1,5 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AppRoutes from "./routes/AppRoutes";
 
 const client = new QueryClient({
@@ -15,6 +17,7 @@ const App = () => {
     <QueryClientProvider client={client}>
       <ReactQueryDevtools initialIsOpen={true} />
       <AppRoutes />
+      <ToastContainer theme="colored" />
     </QueryClientProvider>
   );
 };
