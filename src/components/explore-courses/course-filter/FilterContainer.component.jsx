@@ -10,10 +10,14 @@ const FilterContainer = () => {
   return (
     <>
       <CourseFilter setFilter={setFilter} />
-      <Course
-        courses={courses?.length ? courses : []}
-        slice={courses?.length || 0}
-      />
+      {courses?.length ? (
+        <Course
+          courses={courses?.length ? courses : []}
+          slice={courses?.length || 0}
+        />
+      ) : (
+        <p className='notFoundText'>No Courses Found</p>
+      )}
     </>
   );
 };

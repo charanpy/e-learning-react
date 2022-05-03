@@ -17,19 +17,6 @@
   fill: var(--light-600);
 }
 
-.profileImage {
-  height: 85%;
-  padding: 0 1.5rem;
-  background: var(--blue-600);
-  color: white;
-  border-radius: 50%;
-}
-
-.profileImage p {
-  font-size: 1.9rem;
-  font-weight: 500;
-}
-
 .menuContainer {
   display: none;
   margin-right: 0.5rem;

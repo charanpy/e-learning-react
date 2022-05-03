@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
-import filterIcon from '../../../assets/filter.png';
 import { errorToaster } from '../../../lib/toast';
 import Button from '../../shared/button/Button.component';
 import CloseSVG from '../../shared/svg/Close.svg';
 import './course-filter.css';
+import FilterIcon from './FilterIcon.component';
+import FilterInput from './FilterInput.component';
+import FilterWrapper from './FilterWrapper.component';
 
 const CourseFilter = ({ setFilter }) => {
   console.log('course filter');
@@ -34,49 +36,16 @@ const CourseFilter = ({ setFilter }) => {
 
   return (
     <>
-      <div
-        className='filterIcon flex-row align justify cursor'
-        onClick={handleToggle}
-      >
-        <img src={filterIcon} alt='filter' width='26px' height='26px' />
-      </div>
+      <FilterIcon handleToggle={handleToggle} />
       {toggle && (
-        <section className='filterContainer flex-row '>
-          <button className='closeFilter' onClick={handleToggle}>
-            <CloseSVG />
-          </button>
-          <div className='flex-col filterWrapper'>
-            <div>
-              <div>
-                <h1 className='filterHeader'>Filters</h1>
-              </div>
-              <div className='filterBody flex-col'>
-                <label className='filterLabel mb'>Enter Course Name</label>
-                <input
-                  type='text'
-                  placeholder='Search'
-                  className='filterInput mb'
-                  ref={titleRef}
-                />
-                <label className='filterLabel mb'>Enter Course Code</label>
-                <input
-                  type='text'
-                  placeholder='Course Code'
-                  className='filterInput mb'
-                  ref={codeRef}
-                />
-              </div>
-            </div>
-            <div className='flex-row filterBtnWrapper'>
-              <Button className='filterBtn clearFilter' onClick={handleClear}>
-                Clear
-              </Button>
-              <Button className='filterBtn' onClick={handleSubmit}>
-                Search
-              </Button>
-            </div>
-          </div>
-        </section>
+        <FilterWrapper
+          handleClear={handleClear}
+          handleSubmit={handleSubmit}
+          handleToggle={handleToggle}
+        >
+          <FilterInput name='Course Name' ref={titleRef} />
+          <FilterInput name='Course Code' ref={codeRef} />
+        </FilterWrapper>
       )}
     </>
   );

@@ -11,9 +11,7 @@ const MyCourse = () => {
 
   if (isLoading) return <LoaderIndicator />;
   return (
-    <>
-      <Course courses={data?.length ? data : []} header='My Courses' />
-    </>
+    <>{data?.length ? <Course courses={data} header='My Courses' /> : ''}</>
   );
 };
 

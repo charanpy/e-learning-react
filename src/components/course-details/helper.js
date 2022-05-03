@@ -1,10 +1,13 @@
-const formatDate = (date) => {
+const formatDate = (date, dob = false) => {
   const currentDate = new Date(date);
-
-  return `${currentDate.getDay().toString().padStart(2, 0)}/${currentDate
+  const separator = dob ? '-' : '/';
+  return `${currentDate.getFullYear()}${separator}${currentDate
     .getMonth()
     .toString()
-    .padStart(2, 0)}/${currentDate.getFullYear()}`;
+    .padStart(2, 0)}${separator}${currentDate
+    .getDay()
+    .toString()
+    .padStart(2, 0)}`;
 };
 
 export default formatDate;

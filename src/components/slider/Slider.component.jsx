@@ -6,12 +6,12 @@ const modal = {
   exit: { x: '-105%' },
 };
 
-const Slider = ({ children, open, className }) => {
+const Slider = ({ children, open, className, variants = modal }) => {
   return (
     <AnimatePresence exitBeforeEnter>
       {open && (
         <motion.div
-          variants={modal}
+          variants={variants}
           initial='hidden'
           animate='visible'
           exit='exit'

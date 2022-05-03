@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { Link, useLocation, useMatch, useResolvedPath } from 'react-router-dom';
+import BooksSVG from '../../components/shared/svg/Books.svg';
 import DashboardSVG from '../../components/shared/svg/Dashboard.svg';
 import ExploreSvg from '../../components/shared/svg/Explore.svg';
-import FavoriteSVG from '../../components/shared/svg/Favorite.svg';
 import MyCourseSVG from '../../components/shared/svg/MyCourse.svg';
 import VideoSVG from '../../components/shared/svg/Video.svg';
+import { getItem } from '../../lib/token';
 import './navbar.css';
 
 const CustomLink = ({ children, to = '/video' }) => {
@@ -22,36 +23,69 @@ const CustomLink = ({ children, to = '/video' }) => {
   );
 };
 
+const isLibrary = (pathname) => pathname.startsWith('/library');
+
+const CourseDashboardLinks = () => (
+  <>
+    <CustomLink to='/dashboard'>
+      <DashboardSVG className='navIcon' />
+      Dashboard
+    </CustomLink>
+    <CustomLink to='/explore'>
+      <ExploreSvg className='navIcon' />
+      Explore Courses
+    </CustomLink>
+    <CustomLink to='/my-course'>
+      <MyCourseSVG className='navIcon' />
+      My Courses
+    </CustomLink>
+    <CustomLink>
+      <VideoSVG className='navIcon' />
+      Videos
+    </CustomLink>
+    {getItem('roleType') === '1' ? (
+      <CustomLink to='/library'>
+        <BooksSVG className='navIcon' />
+        Library
+      </CustomLink>
+    ) : (
+      ''
+    )}
+  </>
+);
+
+const LibraryDashboard = () => {
+  return (
+    <>
+      <CustomLink to='/dashboard'>
+        <DashboardSVG className='navIcon' />
+        Dashboard
+      </CustomLink>
+      <CustomLink to='/library/books'>
+        <BooksSVG className='navIcon' />
+        Books
+      </CustomLink>
+    </>
+  );
+};
+
 const Navbar = ({ className = '' }) => {
+  const { pathname } = useLocation();
+
   return (
     <>
       <nav className={` ${className || 'appNav'}`}>
         <div className='navHeader flex-row centerAll'>
-          <h1>Courses</h1>
+          <h1>{isLibrary(pathname) ? 'Library' : 'Courses'}</h1>
         </div>
         <div className='navListContainer'>
           <p className='appMenu lContainer'>MENU</p>
           <ul className='navList'>
-            <CustomLink to='/dashboard'>
-              <DashboardSVG className='navIcon' />
-              Dashboard
-            </CustomLink>
-            <CustomLink to='/explore'>
-              <ExploreSvg className='navIcon' />
-              Explore Courses
-            </CustomLink>
-            <CustomLink to='/my-course'>
-              <MyCourseSVG className='navIcon' />
-              My Courses
-            </CustomLink>
-            <CustomLink>
-              <VideoSVG className='navIcon' />
-              Videos
-            </CustomLink>
-            <CustomLink>
-              <FavoriteSVG className='navIcon' />
-              Favorite
-            </CustomLink>
+            {isLibrary(pathname) ? (
+              <LibraryDashboard />
+            ) : (
+              <CourseDashboardLinks />
+            )}
           </ul>
         </div>
       </nav>

@@ -21,6 +21,8 @@ body {
   --light-900: #0f172a;
   --blue-600: #2563eb;
   --blue-700: #0e7490;
+  --green: #22c55e;
+  --red: #ef4444;
 }
 
 h1,
@@ -34,6 +36,8 @@ ul {
   margin: 0;
   padding: 0;
   font-size: 1.5rem;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 li {
@@ -44,9 +48,22 @@ a {
   text-decoration: none;
 }
 
+.jus-between {
+  justify-content: space-between;
+}
 .flex-row {
   display: flex;
   flex-wrap: wrap;
+}
+.notFoundText {
+  font-size: 1.7rem;
+  color: var(--light-700);
+  font-weight: 500;
+}
+.courseHeader {
+  font-size: 2rem;
+  color: var(--light-900);
+  font-weight: 500;
 }
 
 .flex-col {
@@ -83,7 +100,9 @@ li {
   font-size: 1.3rem;
 }
 
-.capitalize {
+.capitalize,
+h1::first-letter,
+p::first-letter {
   text-transform: capitalize;
 }
 
@@ -95,8 +114,14 @@ button,
 input {
   font-family: inherit;
 }
-button {
+button,
+svg {
   cursor: pointer;
+}
+button {
+  background: transparent;
+  border: none;
+  outline: none;
 }
 .Toastify__toast-container {
   z-index: 1000000000001111 !important;
@@ -106,4 +131,29 @@ button {
 }
 .m-sm {
   margin-top: 3rem;
+}
+
+.totalPage {
+  font-size: 1.5rem;
+  color: var(--light-600);
+}
+
+.profileImage {
+  height: 4rem;
+  padding: 0 1.5rem;
+  background: var(--blue-600);
+  color: white;
+  border-radius: 50%;
+}
+
+.profileImage p {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+.truncate {
+  overflow: hidden;
+  width: 70%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -16,6 +16,15 @@ const ExploreCourse = lazy(() =>
 );
 const LoginPage = lazy(() => import('../pages/login/Login.page'));
 const MyCoursePage = lazy(() => import('../pages/my-course/MyCourse.page'));
+const CourseVideo = lazy(() =>
+  import('../pages/course-video/CourseVideo.page')
+);
+const ProfilePage = lazy(() => import('../pages/profile/Profile.page'));
+const LibraryPage = lazy(() => import('../pages/library/Library.page'));
+const BooksPage = lazy(() => import('../pages/books/Books.page'));
+const IssuedBook = lazy(() =>
+  import('../components/issurd-book/IssuedBook.component')
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -76,6 +85,62 @@ const AppRoutes = () => {
                 </PrivateRoute>
               }
             />
+            <Route
+              path='/video/:courseId'
+              element={
+                <PrivateRoute>
+                  <PageTransition>
+                    <CourseVideo />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path='/profile'
+              element={
+                <PrivateRoute>
+                  <PageTransition>
+                    <ProfilePage />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            />
+
+            <Route
+              path='/library'
+              element={
+                <PrivateRoute role='student'>
+                  <PageTransition>
+                    <LibraryPage />
+                  </PageTransition>
+                </PrivateRoute>
+              }
+            >
+              <Route
+                path='books'
+                element={
+                  <PageTransition>
+                    <BooksPage />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path='issue-book'
+                element={
+                  <PageTransition>
+                    <IssuedBook name='issue-book-list' />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path='return-book'
+                element={
+                  <PageTransition>
+                    <IssuedBook name='return-book-list' />
+                  </PageTransition>
+                }
+              />
+            </Route>
 
             <Route
               path='/auth'

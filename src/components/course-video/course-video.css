@@ -1,0 +1,179 @@
+.video-detail-container {
+  width: 70%;
+}
+
+.video-detail-container video {
+  width: 100%;
+  height: 50rem;
+  background: #1c1d1f;
+}
+.course-intro {
+  margin: 1rem;
+}
+.course-name {
+  font-size: 2rem;
+  margin-left: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.video-helps span {
+  margin: 1.5rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+}
+.video-content-component {
+  width: 30%;
+}
+.video-content-list {
+  height: 50rem;
+  overflow-y: scroll;
+  width: 30%;
+  position: relative;
+}
+
+.videoContentFull {
+  height: fit-content;
+  width: 100%;
+  overflow: hidden;
+}
+.video-content-list .video-content {
+  padding: 2rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--light-400);
+}
+.input-search {
+  width: 100%;
+  height: 3.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.add-cursor {
+  cursor: pointer;
+}
+
+.courseVideoHeader {
+  padding: 1.5rem;
+  width: fit-content;
+}
+
+.courseVideoHeader svg {
+  margin-top: 3px;
+}
+
+.courseVideoHeader h1 {
+  margin-right: 2.5rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--light-900);
+}
+
+.videoSyllabusHeader {
+  padding: 1.8rem 1.5rem;
+  background: white;
+  border-top: 1px solid #e4e9f2;
+  border-bottom: 1px solid #e4e9f2;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.videoSyllabusHeader h1 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.videoSyllabusCard {
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid #e4e9f2;
+  background: white;
+}
+
+.videoSyllabusCard:hover,
+.selectedVideo {
+  background: #f1f3f8;
+}
+
+.videoSyllabusCard span,
+.videoSyllabusCard h1,
+.aboutText {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.videoSyllabusCard span {
+  margin-right: 1rem;
+}
+
+.videoCourseIcon {
+  margin-right: 1.7rem;
+}
+.videoIco,
+.videoCourseIcon {
+  margin-top: 3px;
+}
+
+.videoTab {
+  padding: 2rem;
+  width: 70%;
+  border-bottom: 1px solid var(--light-400);
+}
+
+.syllabusButton {
+  display: none;
+}
+.videoTabHeader {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--light-700);
+  font-size: 1.6rem;
+  margin-right: 3rem;
+}
+
+.videoTabWrapper {
+  margin-top: 2rem;
+  line-height: 2;
+}
+
+.aboutCourse {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.video-content-list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.video-content-list::-webkit-scrollbar-track {
+  border-radius: 50%;
+}
+.video-content-list::-webkit-scrollbar-thumb {
+  background: var(--light-500);
+  border-radius: 10px;
+}
+@media (max-width: 980px) {
+  .asideVideoContent {
+    display: none;
+  }
+  .video-detail-container {
+    width: 100%;
+  }
+
+  .videoTab {
+    width: 100%;
+  }
+
+  .syllabusButton {
+    display: flex;
+  }
+  .videoTabHeader {
+    margin-right: 2rem;
+    line-height: 3;
+  }
+}
+
+@media (max-width: 650px) {
+  .video-detail-container video {
+    height: 100%;
+  }
+}

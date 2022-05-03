@@ -6,7 +6,6 @@ import Register from './Register.component';
 
 const LoginComponent = () => {
   const [login, setLogin] = useState(true);
-  const [isStudent, setStudent] = useState(true);
 
   const handleClick = () => {
     setLogin((toggle) => !toggle);

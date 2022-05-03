@@ -18,6 +18,12 @@ const Course = ({ courses, slice = 4, header = 'Courses' }) => {
                     src={course?.image?.url || courseImage}
                     alt={course?.courseTitle}
                     className='courseImage'
+                    loading='lazy'
+                    decoding='async'
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = courseImage;
+                    }}
                   />
                 </div>
                 <figcaption>

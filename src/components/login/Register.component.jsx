@@ -1,6 +1,9 @@
 import React from 'react';
 import Button from '../shared/button/Button.component';
+import RegisterInput from './RegisterInput.component';
 import useRegister from './useRegister';
+
+const isStudent = (role) => role === 'student';
 
 const Register = () => {
   const [
@@ -13,11 +16,18 @@ const Register = () => {
     nameRef,
     onHandleSubmit,
     loading,
+    role,
+    setRole,
+    yearRef,
   ] = useRegister();
   return (
     <form onSubmit={onHandleSubmit}>
       <div className='inputBox w100'>
-        <select ref={roleRef} defaultValue='0'>
+        <select
+          ref={roleRef}
+          value={role}
+          onChange={(e) => setRole(e?.target?.value)}
+        >
           <option value='0' disabled>
             Select
           </option>
@@ -26,59 +36,34 @@ const Register = () => {
         </select>
         <span>Select User Type</span>
       </div>
-      <div className='inputBox w100'>
-        <input
-          type='text'
-          required
-          name='name'
-          autoComplete='false'
-          ref={nameRef}
-        />
-        <span>Enter Username</span>
-      </div>
-      <div className='inputBox w100'>
-        <input type='text' name='rollNo' autoComplete='false' ref={rollNoRef} />
-        <span>Enter RollNumber</span>
-      </div>
-      <div className='inputBox w100'>
-        <input
-          type='email'
-          required
-          name='email'
-          autoComplete='false'
-          ref={emailRef}
-        />
-        <span>Enter Email</span>
-      </div>
-      <div className='inputBox w100'>
-        <input
-          type='password'
-          required
-          name='password'
-          autoComplete='false'
-          ref={passwordRef}
-        />
-        <span>Enter Password</span>
-      </div>
-      <div className='inputBox w100'>
-        <input
-          type='date'
-          required
-          name='dob'
-          autoComplete='false'
-          ref={dobRef}
-        />
-      </div>
-      <div className='inputBox w100'>
-        <input
-          type='number'
-          required
-          name='mobileNo'
-          autoComplete='false'
-          ref={mobileRef}
-        />
-        <span>Enter Mobile Number</span>
-      </div>
+      <RegisterInput ref={nameRef} label='Username' />
+
+      <RegisterInput ref={emailRef} label='Email' type='email' />
+      <RegisterInput
+        ref={rollNoRef}
+        label='Roll Number'
+        required={isStudent(role)}
+        display={isStudent(role)}
+      />
+      <RegisterInput
+        ref={yearRef}
+        label='Year'
+        required={isStudent(role)}
+        display={isStudent(role)}
+        type='number'
+        min={1}
+        max={4}
+      />
+
+      <RegisterInput ref={passwordRef} label='Password' type='password' />
+      <RegisterInput ref={dobRef} label='DOB' type='date' />
+      <RegisterInput
+        ref={mobileRef}
+        label='Mobile Number'
+        type='tel'
+        minLength={10}
+      />
+
       <Button disabled={loading} className='login-button'>
         {loading ? 'Registering' : 'Register'}
       </Button>

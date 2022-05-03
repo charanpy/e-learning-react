@@ -1,22 +1,32 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import FullPageLoader from '../components/shared/loader/FullPageLoader.component';
 import request from '../lib/fetch';
 import { errorToaster, successToaster } from '../lib/toast';
-import { setItem } from '../lib/token';
+import { removeItem, setItem } from '../lib/token';
 
 const UserContext = createContext({});
 
 export const useUser = () => useContext(UserContext);
 
 const UserProvider = ({ children }) => {
+  const navigate = useNavigate();
   const [userData, setUser] = useState({ user: null, loading: true });
   const [loading, setLoading] = useState(false);
 
   const { user, loading: authLoading } = userData;
 
+  const setProfileImage = (image) => {
+    const prevUser = user;
+    prevUser['image'] = image;
+    setUser((prev) => ({ ...prev, user: prevUser }));
+  };
+
   const getMe = async () => {
     try {
       const data = await request('/student/me', 'GET', null, true, false);
+      setItem(data?.role === 'student' ? 1 : 0, 'roleType');
+
       setUser((prev) => ({ ...prev, loading: false, user: data }));
     } catch (error) {
       setUser((prev) => ({ ...prev, loading: false, user: null }));
@@ -37,6 +47,8 @@ const UserProvider = ({ children }) => {
       successToaster('Logged in successfully');
       setUser((prev) => ({ ...prev, user: res?.student }));
       setItem(res?.token);
+      setItem(res?.student?.role === 'student' ? 1 : 0, 'roleType');
+      navigate('/dashboard');
     } catch (error) {
     } finally {
       setLoading((load) => !load);
@@ -65,9 +77,22 @@ const UserProvider = ({ children }) => {
     }
   };
 
+  const logout = () => {
+    removeItem();
+    setUser((prev) => ({ ...prev, loading: false, user: null }));
+    navigate('/auth');
+  };
+
   return (
     <UserContext.Provider
-      value={{ user, loading, handleLogin, handleRegister }}
+      value={{
+        user,
+        loading,
+        handleLogin,
+        handleRegister,
+        logout,
+        setProfileImage,
+      }}
     >
       {children}
     </UserContext.Provider>
