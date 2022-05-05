@@ -73,8 +73,6 @@ const BookDetails = ({ open, book, toggleModal, category }) => {
               <BookInfo header='Price' value={book?.price} />
               <BookInfo header='Edition' value={book?.edition} />
               <BookInfo header='Language' value={book?.language} />
-
-              <BookInfo header='Category' value={book?.category} />
             </div>
           </section>
         </div>

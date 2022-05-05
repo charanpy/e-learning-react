@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import DownArrowSVG from '../../shared/svg/DownArrow.svg';
 import defaultBook from '../../../assets/defaultBook.jpg';
 import BookDetails from './BookDetails.component';
+import './book-card.css';
 
 export const mapCategory = (category, n = 2) => {
   if (!category?.length) return;
@@ -24,7 +25,8 @@ export const formatDueDate = (date, issue = false) => {
   return `${issue ? 'Issue' : 'Due'}- ${formatDate(date)}`;
 };
 
-const BookCard = ({ book, expiryDate, issueDate }) => {
+const BookCard = memo(({ book, expiryDate, issueDate }) => {
+  console.log('1');
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -87,16 +89,18 @@ const BookCard = ({ book, expiryDate, issueDate }) => {
           View Details <DownArrowSVG />
         </button>
       </div>
-      <BookDetails
-        open={modal}
-        toggleModal={toggleModal}
-        book={book}
-        id={book?._id}
-        category={mapCategory(book?.category, book?.category?.length)}
-      />
+      {modal && (
+        <BookDetails
+          open={modal}
+          toggleModal={toggleModal}
+          book={book}
+          id={book?._id}
+          category={mapCategory(book?.category, book?.category?.length)}
+        />
+      )}
     </div>
   );
-};
+});
 
 const BookCards = ({ books }) => {
   return (

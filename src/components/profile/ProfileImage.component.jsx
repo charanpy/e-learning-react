@@ -4,6 +4,7 @@ import { errorToaster, successToaster } from '../../lib/toast';
 import { getItem } from '../../lib/token';
 import { opacityModal } from '../course-video/CourseVideoTabs.component';
 import Button from '../shared/button/Button.component';
+import ProfileImageComponent from '../shared/ProfileImage/ProfileImage.component';
 import Slider from '../slider/Slider.component';
 const ProfileImage = ({ image, name, setProfileImage }) => {
   const [profileImage, setImage] = useState({
@@ -59,13 +60,7 @@ const ProfileImage = ({ image, name, setProfileImage }) => {
   return (
     <>
       <figure className='flex-col justify align profileImageContainer'>
-        {!image ? (
-          <div className='profileImage flex-row centerAll'>
-            <p>{name?.[0]?.toUpperCase() || 'A'}</p>
-          </div>
-        ) : (
-          <img alt='profile' src={image?.url} className='profileImg' />
-        )}
+        <ProfileImageComponent />
         <input
           id='profileFile'
           type='file'

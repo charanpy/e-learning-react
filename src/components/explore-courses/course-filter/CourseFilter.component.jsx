@@ -7,7 +7,7 @@ import FilterIcon from './FilterIcon.component';
 import FilterInput from './FilterInput.component';
 import FilterWrapper from './FilterWrapper.component';
 
-const CourseFilter = ({ setFilter }) => {
+const CourseFilter = ({ setFilter, setInitial }) => {
   console.log('course filter');
   const [toggle, setToggle] = useState(false);
   const titleRef = useRef();
@@ -25,6 +25,7 @@ const CourseFilter = ({ setFilter }) => {
       return errorToaster('Please enter course name or code');
     }
     handleToggle();
+    setInitial();
     setFilter((filter) => ({ ...filter, code, title }));
   };
 

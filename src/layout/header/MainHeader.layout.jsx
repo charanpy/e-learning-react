@@ -15,7 +15,7 @@ const MainHeader = ({ handleToggle, header }) => {
       </div>
       <div className='profileImage flex-row centerAll'>
         <Link to='/profile'>
-          <p>A</p>
+          <p>P</p>
         </Link>
       </div>
     </header>

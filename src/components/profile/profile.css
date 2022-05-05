@@ -88,13 +88,6 @@
 .cancelBtn {
   background: #dc2626;
 }
-.profileImg {
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-}
 
 .logout {
   padding: 0.5rem 1rem;

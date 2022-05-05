@@ -1,0 +1,20 @@
+.iconContainer svg {
+  fill: white !important;
+}
+
+.mrIcon {
+  margin-right: 1.5rem;
+}
+
+.iconContainer {
+  background: var(--blue-600);
+}
+
+.paginateText {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.paginateWrapper {
+  margin: 3rem 0;
+}

@@ -25,6 +25,9 @@ const BooksPage = lazy(() => import('../pages/books/Books.page'));
 const IssuedBook = lazy(() =>
   import('../components/issurd-book/IssuedBook.component')
 );
+const ExploreBooks = lazy(() =>
+  import('../pages/explore-books/ExploreBooks.page')
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -137,6 +140,14 @@ const AppRoutes = () => {
                 element={
                   <PageTransition>
                     <IssuedBook name='return-book-list' />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path='explore-books'
+                element={
+                  <PageTransition>
+                    <ExploreBooks />
                   </PageTransition>
                 }
               />

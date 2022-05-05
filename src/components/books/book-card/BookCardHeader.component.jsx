@@ -1,4 +1,5 @@
 import React from 'react';
+import './book-card.css';
 
 const BookCardHeader = () => {
   return (

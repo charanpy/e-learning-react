@@ -1,5 +1,6 @@
 import React from 'react';
 import filterIcon from '../../../assets/filter.png';
+import './course-filter.css';
 
 const FilterIcon = ({ handleToggle }) => {
   return (

@@ -16,7 +16,8 @@ const CourseVideo = () => {
   );
 
   if (isLoading || loading) return <LoaderIndicator />;
-  if (!isLoading && !data?.videos?.length) return <Navigate to='/dashboard' />;
+  if (!isLoading && !data?.videos?.length)
+    return <h1 className='courseHeader'>No Videos to display</h1>;
   return (
     <>
       {data?.videos?.length && (
