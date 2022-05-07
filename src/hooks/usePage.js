@@ -35,7 +35,7 @@ const usePage = (length = 0) => {
   };
 
   const setTotalPage = (totalPages) => {
-    if (!totalPages < 0) return;
+    if (totalPages < 0) return;
     setPageData((prev) => ({
       ...prev,
       totalPage: totalPages === 0 ? 1 : Math.ceil(totalPages / 10),

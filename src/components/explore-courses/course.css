@@ -58,3 +58,9 @@
   color: var(--light-500);
   font-weight: 400;
 }
+
+@media (max-width: 600px) {
+  .courseWrapper {
+    justify-content: center;
+  }
+}

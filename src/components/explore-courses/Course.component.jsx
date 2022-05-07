@@ -7,7 +7,7 @@ const Course = ({ courses, slice = 4, header = 'Courses' }) => {
   return (
     <>
       <h1 className='courseHeader m-sm'>{header}</h1>
-      <section className='flex-row'>
+      <section className='flex-row courseWrapper'>
         {courses?.slice(0, slice)?.map((data) => {
           const course = data?.course || data;
           return (

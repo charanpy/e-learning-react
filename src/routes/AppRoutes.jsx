@@ -28,6 +28,8 @@ const IssuedBook = lazy(() =>
 const ExploreBooks = lazy(() =>
   import('../pages/explore-books/ExploreBooks.page')
 );
+const AuthorPage = lazy(() => import('../pages/authors/Authors.page'));
+const MaterialsPage = lazy(() => import('../pages/materials/Materials.page'));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -148,6 +150,22 @@ const AppRoutes = () => {
                 element={
                   <PageTransition>
                     <ExploreBooks />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path='authors'
+                element={
+                  <PageTransition>
+                    <AuthorPage />
+                  </PageTransition>
+                }
+              />
+              <Route
+                path='material'
+                element={
+                  <PageTransition>
+                    <MaterialsPage />
                   </PageTransition>
                 }
               />

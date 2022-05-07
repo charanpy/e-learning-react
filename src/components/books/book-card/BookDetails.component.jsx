@@ -53,7 +53,9 @@ const BookDetails = ({ open, book, toggleModal, category }) => {
                   {book?.author?.authorName?.[0] || 'A'}
                 </p>
               </div>
-              <h3 className='bookSubText ml-2'>{book?.author?.authorName}</h3>
+              <h3 className='bookSubText ml-2 capitalize'>
+                {book?.author?.authorName}
+              </h3>
             </div>
             <div>
               <p className='bookDescription'>{book?.description}</p>

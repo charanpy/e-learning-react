@@ -41,7 +41,7 @@ const ExploreBooksComponent = () => {
           />
         </>
       ) : (
-        <h1 className='courseHeader m-sm'>No Course Found</h1>
+        <h1 className='courseHeader m-sm'>No Books Found</h1>
       )}
     </>
   );

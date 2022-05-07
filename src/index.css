@@ -157,3 +157,6 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.my {
+  margin: 2rem 0;
+}

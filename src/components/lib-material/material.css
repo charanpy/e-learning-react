@@ -1,0 +1,47 @@
+.libMaterialCard {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.libMaterialCard:hover {
+  background: var(--light-200);
+}
+.libMaterialName {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  color: var(--light-800);
+  font-weight: 500;
+}
+.libMaterialDescription {
+  font-size: 1.5rem;
+  color: var(--light-500);
+  margin: 1.5rem 0;
+}
+
+.materialFileCard {
+  padding: 0.7rem 2rem;
+  border-radius: 8px;
+  background: var(--light-100);
+  border: 1px solid var(--light-300);
+  width: fit-content;
+}
+
+.noteSvg {
+  fill: var(--light-500);
+  margin-right: 1rem;
+}
+.materialPopup {
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100000000000000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+.materialPDF canvas {
+  max-width: 100% !important;
+  height: auto !important;
+}

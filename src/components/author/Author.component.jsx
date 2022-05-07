@@ -1,32 +1,30 @@
 import React, { useEffect } from 'react';
-import BookCard from './book-card/BookCard.component';
-import BookCardHeader from './book-card/BookCardHeader.component';
-import './book-card/book-card.css';
 import { useQuery } from 'react-query';
 import usePage from '../../hooks/usePage';
 import request from '../../lib/fetch';
 import LoaderIndicator from '../shared/loader/LoaderIndicator.component';
-import FilterBook from './FilterBook.component';
 import PaginateArrow from '../shared/Paginate/Paginate.component';
+import AuthorContainer from './AuthorCard.component';
 
-const Book = () => {
+const Author = () => {
   const [page, totalPage, handlePrev, handleNext, setTotalPage] = usePage();
-  const { data, isLoading } = useQuery(['books', `page=${page + 1}`], () =>
-    request(`/book?page=${page + 1}`)
+  const { isLoading, data } = useQuery(['author', page + 1], () =>
+    request(`/author?page=${page + 1}`)
   );
 
   useEffect(() => {
-    if (data?.count >= 0) setTotalPage(data?.count);
+    if (data?.count >= 0) {
+      console.log('Hey', data?.count);
+      setTotalPage(data?.count);
+    }
   }, [data?.count]);
 
   if (isLoading) return <LoaderIndicator />;
   return (
     <>
-      {data?.data?.length ? (
+      {data?.authors?.length ? (
         <>
-          <BookCardHeader />
-          <BookCard books={data?.data} />
-          <FilterBook />
+          <AuthorContainer authors={data?.authors} />
           <PaginateArrow
             currentPage={page}
             setNext={handleNext}
@@ -35,10 +33,10 @@ const Book = () => {
           />
         </>
       ) : (
-        <h1 className='courseHeader'>No Books Found</h1>
+        <h1 className='courseHeader'>No Author Book</h1>
       )}
     </>
   );
 };
 
-export default Book;
+export default Author;
