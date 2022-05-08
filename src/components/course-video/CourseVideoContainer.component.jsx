@@ -1,13 +1,39 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import request from '../../lib/fetch';
 import BackArrowSVG from '../shared/svg/BackArrow.svg';
 import './course-video.css';
 import CourseSyllabus from './CourseSyllabus.component';
 import CourseVideo from './CourseVideo.component';
 import CourseVideoTabs from './CourseVideoTabs.component';
 
+const updateRecentWatched = async (video, priority) => {
+  try {
+    await request(
+      '/enrol-course/recently-watched',
+      'POST',
+      {
+        title: video?.title,
+        courseId: video?.course,
+        priority,
+        lectureId: video?._id,
+      },
+      true,
+      false
+    );
+  } catch (error) {}
+};
+
 const CourseVideoContainer = ({ videos, course, materials }) => {
-  const [selectedVideo, setSelectedVideo] = useState(0);
+  const [params] = useSearchParams();
+  const [selectedVideo, setSelectedVideo] = useState(
+    params.get('video') ? params.get('video') - 1 : 0
+  );
+
+  useEffect(() => {
+    return () => updateRecentWatched(videos[selectedVideo], selectedVideo + 1);
+    // eslint-disable-next-line
+  }, [selectedVideo]);
   const navigate = useNavigate();
   return (
     <>
@@ -25,6 +51,10 @@ const CourseVideoContainer = ({ videos, course, materials }) => {
           videos={videos}
           selectedVideo={selectedVideo}
           className='asideVideoContent'
+          course={course?._id}
+          currPage={
+            params.get('video') ? Math.floor(params.get('video') / 11) : 0
+          }
         />
       </div>
       <CourseVideoTabs

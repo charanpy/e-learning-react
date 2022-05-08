@@ -1,7 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { errorToaster } from '../../../lib/toast';
-import Button from '../../shared/button/Button.component';
-import CloseSVG from '../../shared/svg/Close.svg';
 import './course-filter.css';
 import FilterIcon from './FilterIcon.component';
 import FilterInput from './FilterInput.component';

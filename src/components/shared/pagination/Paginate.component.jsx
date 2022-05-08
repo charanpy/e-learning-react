@@ -7,7 +7,8 @@ import usePaginate from './usePagination';
 const Pagination = (props) => {
   const { Component } = props;
   const [page, data, totalPage, handleNext, handlePrev] = usePaginate(
-    props.data
+    props.data,
+    props?.currPage
   );
   return (
     <>

@@ -21,6 +21,7 @@ const ExploreBooksComponent = () => {
 
   useEffect(() => {
     if (data?.count !== totalPage) setTotalPage(data?.count);
+    // eslint-disable-next-line
   }, [data?.count]);
 
   console.log(totalPage, 8888);

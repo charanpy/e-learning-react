@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import { errorToaster } from '../../lib/toast';
-import { opacityModal } from '../course-video/CourseVideoTabs.component';
 import Button from '../shared/button/Button.component';
 import BooksSVG from '../shared/svg/Books.svg';
-import NoteSVG from '../shared/svg/Note.svg';
-import Slider from '../slider/Slider.component';
-import Pdf from './Pdf.component';
+import CloseSVG from '../shared/svg/Close.svg';
+const Pdf = lazy(() => import('./Pdf.component'));
 
 const MaterialDetail = ({
   open,
@@ -23,7 +21,7 @@ const MaterialDetail = ({
       if (restrict) {
         setLoading((toggle) => !toggle);
         const res = await refetch();
-        if (res?.data?._id) return setMaterial((toggle) => !toggle);
+        if (res?.status === 'success') return setMaterial((toggle) => !toggle);
         return errorToaster('Maximum view count reached for requested PDF');
       }
       setMaterial((toggle) => !toggle);
@@ -34,8 +32,8 @@ const MaterialDetail = ({
     }
   };
   return (
-    <>
-      <p className='libMaterialDescription'>This is Material Description</p>
+    <div style={{ position: 'relative' }}>
+      <p className='libMaterialDescription'>{description}</p>
       {!loading && (
         <Button className='materialFileCard flex-row align' onClick={onClick}>
           <BooksSVG className='noteSvg' />
@@ -46,12 +44,16 @@ const MaterialDetail = ({
       )}
       {material && (
         <section className='materialPopup'>
-          <Slider variants={opacityModal} open={material}>
-            <Pdf file={file} />
-          </Slider>
+          <Pdf file={file || data?.file?.url} />
+          <Button
+            className='closeMat'
+            onClick={() => setMaterial((prev) => !prev)}
+          >
+            <CloseSVG />
+          </Button>
         </section>
       )}
-    </>
+    </div>
   );
 };
 

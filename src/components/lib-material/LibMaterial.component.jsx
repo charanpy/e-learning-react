@@ -36,7 +36,7 @@ const LibMaterial = () => {
         <h1 className='courseHeader my'>No Public Material Found</h1>
       )}
       <h1 className='courseHeader'>Restricted Materials</h1>
-      {privateMaterial?.length ? (
+      {!loading && privateMaterial?.length ? (
         privateMaterial?.map((material) => (
           <MaterialCard
             material={material}

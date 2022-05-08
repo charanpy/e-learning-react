@@ -48,6 +48,12 @@ const Profile = () => {
           type='text'
           value={user?.mobileNumber}
         />
+        <ProfileInput
+          type='number'
+          role={user?.role === 'student'}
+          label='Year'
+          value={user?.year || 0}
+        />
       </form>
     </section>
   );

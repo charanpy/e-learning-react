@@ -17,6 +17,7 @@ const Author = () => {
       console.log('Hey', data?.count);
       setTotalPage(data?.count);
     }
+    // eslint-disable-next-line
   }, [data?.count]);
 
   if (isLoading) return <LoaderIndicator />;

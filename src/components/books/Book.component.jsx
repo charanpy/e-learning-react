@@ -17,6 +17,7 @@ const Book = () => {
 
   useEffect(() => {
     if (data?.count >= 0) setTotalPage(data?.count);
+    // eslint-disable-next-line
   }, [data?.count]);
 
   if (isLoading) return <LoaderIndicator />;

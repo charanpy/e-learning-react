@@ -10,7 +10,7 @@ import './material.css';
 import MaterialDetail from './MaterialDetail.component';
 
 const fetchFileView = (id) => () =>
-  request(`/file-view/${id}`, 'GET', null, true, true).request();
+  request(`/file-view/${id}`, 'GET', null, true, true);
 
 const MaterialCard = ({ material, restrict }) => {
   const { data, refetch } = useQuery(
@@ -25,7 +25,7 @@ const MaterialCard = ({ material, restrict }) => {
     <section className='libMaterialCard flex-col cursor'>
       <div className='flex-row jus-between align'>
         <div className='flex-row align'>
-          <FolderSVG />
+          <FolderSVG open={open} />
           <h1 className='libMaterialName capitalize'>{material?.title}</h1>
         </div>
         <Button onClick={() => setOpen((prev) => !prev)}>

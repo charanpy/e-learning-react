@@ -21,7 +21,7 @@
   color: var(--light-200);
   font-size: 1.7rem;
   font-weight: 400;
-  width: 70vw;
+  width: 60vw;
 }
 
 .courseDetailsInstructors {
@@ -193,5 +193,8 @@
   }
   .courseContentContainer {
     margin: 2rem;
+  }
+  .courseDescription {
+    width: 90vw;
   }
 }

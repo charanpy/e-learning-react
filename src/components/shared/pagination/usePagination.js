@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-const usePaginate = (pageData) => {
+const usePaginate = (pageData, currPage) => {
   const [currentPageData, setPage] = useState({
-    page: 0,
-    data: pageData.slice(0, 10),
+    page: currPage || 0,
+    data: pageData.slice(currPage * 10 || 0, (currPage + 1) * 10 || 10),
     totalPage: Math.ceil(pageData.length / 10),
   });
 
