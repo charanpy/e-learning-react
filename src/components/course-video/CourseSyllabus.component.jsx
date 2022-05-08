@@ -57,8 +57,18 @@ const CourseContentList = memo(
 );
 
 const CourseContent = (props) => {
+  const percentage = Math.ceil(
+    ((props?.completed?.completedCount || 0) / props?.length) * 100
+  );
+
   return (
     <div className='videoSyllabusContent'>
+      <div className='videoSyllabusCard flex-row align jus-between'>
+        <div className='progressBar'>
+          <div className='progress' style={{ width: `${percentage}%` }} />
+        </div>
+        <span className='percentage'>{percentage}%</span>
+      </div>
       {props?.data?.map((video, index) => (
         <CourseContentList
           index={props?.page * 10 + index}
@@ -67,7 +77,7 @@ const CourseContent = (props) => {
           setSelectedVideo={props?.setSelectedVideo}
           key={video?._id}
           course={props.course}
-          completed={!!props?.completed?.[video?._id]}
+          completed={!!props?.completed?.completed?.[video?._id]}
         />
       ))}
     </div>

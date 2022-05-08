@@ -30,7 +30,12 @@ const Pagination = (props) => {
           )}
         </div>
       </div>
-      <Component {...props} page={page} data={data} />
+      <Component
+        {...props}
+        page={page}
+        data={data}
+        length={props?.data?.length}
+      />
     </>
   );
 };

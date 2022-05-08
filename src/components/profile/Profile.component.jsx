@@ -50,7 +50,7 @@ const Profile = () => {
         />
         <ProfileInput
           type='number'
-          role={user?.role === 'student'}
+          display={user?.role === 'student'}
           label='Year'
           value={user?.year || 0}
         />

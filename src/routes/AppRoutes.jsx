@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import PageTransition from './PageTransition';
 import ErrorBoundary from '../components/ErrorBoundary';
 import PrivateRoute from './PrivateRoutes';
+import FullPageLoader from '../components/shared/loader/FullPageLoader.component';
 
 const HomePage = lazy(() => import('../pages/home/Home.page'));
 const DashboardPage = lazy(() => import('../pages/dashboard/Dashboard.page'));
@@ -35,7 +36,7 @@ const AppRoutes = () => {
   const location = useLocation();
   return (
     <ErrorBoundary>
-      <Suspense fallback={<div>Loading</div>}>
+      <Suspense fallback={<FullPageLoader />}>
         <AnimatePresence exitBeforeEnter initial={false}>
           <Routes location={location} key={location.pathname}>
             <Route
