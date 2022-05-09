@@ -24,7 +24,7 @@ const LoginBox = () => {
         <span>Enter Email</span>
       </div>
       <div className='inputBox w100'>
-        <input type='text' required name='password' ref={passwordRef} />
+        <input type='password' required name='password' ref={passwordRef} />
         <span>Enter Password</span>
       </div>
       <Button className='login-button' disabled={loading}>
