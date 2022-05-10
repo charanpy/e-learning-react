@@ -1,5 +1,5 @@
 .main-container {
-  height: 90vh !important;
+  height: 80vh !important;
 }
 
 .nav_home {
@@ -12,6 +12,10 @@
 
 .justify-between_home {
   justify-content: space-between;
+}
+
+.justify-around_home {
+  justify-content: space-around;
 }
 
 .align-center_home {
@@ -81,6 +85,25 @@
 .flex-column_home {
   display: flex;
   flex-direction: column;
+}
+
+.icon_img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+@media screen and (max-width: 600px) {
+  .title_home {
+    font-size: 2.5rem;
+  }
+
+  .content-text_home {
+    font-size: 3rem;
+  }
+
+  .content-text-secondary_home {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (min-width: 700px) {

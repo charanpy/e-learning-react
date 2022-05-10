@@ -2,6 +2,9 @@ import React from "react";
 import "./home.css";
 import courseImage from "../../assets/home-icon.jpg";
 import Banner from "../../assets/banner.png";
+import icon1 from "../../assets/function1.jpg";
+import icon2 from "../../assets/function2.jpg";
+import icon3 from "../../assets/function3.jpg";
 import Button from "../shared/button/Button.component";
 import { Link } from "react-router-dom";
 import { useUser } from "../../context/UserProvider";
@@ -16,7 +19,7 @@ const HomeComponent = () => {
           <img alt="course" src={courseImage} />
           {/* title section */}
           <div style={{ marginLeft: "1rem" }}>
-            <p className="fs-1_home">E Learning</p>
+            <p className="fs-1_home title_home">E Learning</p>
             <p>Communicate. Collaborate. Create.</p>
           </div>
         </div>
@@ -83,6 +86,44 @@ const HomeComponent = () => {
               <Link to="/dashboard">
                 <Button className="dash-btn_home">Dashboard</Button>
               </Link>
+            </div>
+            {/* icons */}
+            <div className="text-center" style={{ marginTop: "6rem" }}>
+              <div className="flex-row justify-around_home">
+                <div className="flex-row align-center_home">
+                  <img src={icon1} alt="Icon" className="icon_img" />
+                  <span
+                    style={{
+                      fontSize: "1.4rem",
+                      margin: "1rem",
+                    }}
+                  >
+                    Speed & Security
+                  </span>
+                </div>
+                <div className="flex-row align-center_home">
+                  <img src={icon2} alt="Icon" className="icon_img" />
+                  <span
+                    style={{
+                      fontSize: "1.4rem",
+                      margin: "1rem",
+                    }}
+                  >
+                    Flexibility
+                  </span>
+                </div>
+                <div className="flex-row align-center_home">
+                  <img src={icon3} alt="Icon" className="icon_img" />
+                  <span
+                    style={{
+                      fontSize: "1.4rem",
+                      margin: "1rem",
+                    }}
+                  >
+                    Better Collaboration
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
