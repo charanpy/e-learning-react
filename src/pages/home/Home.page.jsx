@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import HomeComponent from '../../components/home/Home.component';
 
 const HomePage = () => {
-  console.log('Home');
   return (
-    <h1>
-      <Link to='/dashboard'>Dashboard</Link>
-    </h1>
+    <>
+      <HomeComponent />
+    </>
   );
 };
 

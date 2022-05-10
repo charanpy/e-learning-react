@@ -4,6 +4,8 @@ import BooksSVG from '../../components/shared/svg/Books.svg';
 import DashboardSVG from '../../components/shared/svg/Dashboard.svg';
 import ExploreSvg from '../../components/shared/svg/Explore.svg';
 import MyCourseSVG from '../../components/shared/svg/MyCourse.svg';
+import NoteSVG from '../../components/shared/svg/Note.svg';
+import ProfileSVG from '../../components/shared/svg/Profile.svg';
 import VideoSVG from '../../components/shared/svg/Video.svg';
 import { getItem } from '../../lib/token';
 import './navbar.css';
@@ -64,6 +66,14 @@ const LibraryDashboard = () => {
       <CustomLink to='/library/books'>
         <BooksSVG className='navIcon' />
         Books
+      </CustomLink>
+      <CustomLink to='/library/authors'>
+        <ProfileSVG className='navIcon' />
+        Authors
+      </CustomLink>
+      <CustomLink to='/library/material'>
+        <NoteSVG className='navIcon' />
+        Materials
       </CustomLink>
     </>
   );

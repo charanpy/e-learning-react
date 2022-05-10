@@ -141,6 +141,19 @@
   font-weight: 600;
 }
 
+.progressBar {
+  height: 3px;
+  width: 90%;
+  border-radius: 50px;
+  background: var(--light-300);
+}
+.progress {
+  height: 100%;
+  background: #00a35c;
+}
+.percentage {
+  margin: 0 !important;
+}
 .video-content-list::-webkit-scrollbar {
   width: 0.5rem;
 }

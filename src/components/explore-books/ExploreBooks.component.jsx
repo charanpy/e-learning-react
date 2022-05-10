@@ -21,6 +21,7 @@ const ExploreBooksComponent = () => {
 
   useEffect(() => {
     if (data?.count !== totalPage) setTotalPage(data?.count);
+    // eslint-disable-next-line
   }, [data?.count]);
 
   console.log(totalPage, 8888);
@@ -41,7 +42,7 @@ const ExploreBooksComponent = () => {
           />
         </>
       ) : (
-        <h1 className='courseHeader m-sm'>No Course Found</h1>
+        <h1 className='courseHeader m-sm'>No Books Found</h1>
       )}
     </>
   );

@@ -8,8 +8,8 @@ const DashboardPage = () => {
   return (
     <Layout header='Dashboard'>
       <Banner />
-      <ExploreCourses />
       <MyCourse />
+      <ExploreCourses />
     </Layout>
   );
 };

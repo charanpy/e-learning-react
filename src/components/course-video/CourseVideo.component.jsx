@@ -7,7 +7,7 @@ const CourseVideo = ({ selectedVideo, videos }) => {
     <div className="video-detail-container">
       <video
         className="video"
-        key={videos?.[selectedVideo]?.video}
+        key={videos?.[selectedVideo]?.video?.url}
         controls
         controlsList="nodownload"
       >

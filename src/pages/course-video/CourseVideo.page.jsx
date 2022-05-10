@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import CourseVideoContainer from '../../components/course-video/CourseVideoContainer.component';
 import LoaderIndicator from '../../components/shared/loader/LoaderIndicator.component';
 import request from '../../lib/fetch';

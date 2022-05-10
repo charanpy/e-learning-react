@@ -1,0 +1,33 @@
+.myEnrollmentCard {
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e4e9f2;
+}
+.myEnrollmentImage {
+  height: 150px;
+  width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.myEnrollmentCard:hover {
+  background: var(--light-200);
+}
+
+.myEnrollmentTag {
+  font-size: 1.5rem;
+  color: var(--light-500);
+}
+.myEnrollDescription {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  line-height: 2;
+}
+
+.myEnrolVideo {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--light-500);
+  margin-left: 0.5rem;
+}

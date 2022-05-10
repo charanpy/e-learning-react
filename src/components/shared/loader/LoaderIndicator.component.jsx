@@ -3,7 +3,7 @@ import Loader from './Loader.component';
 
 const LoaderIndicator = () => {
   return (
-    <div className='row justify'>
+    <div className='row justify' style={{ width: '100vw' }}>
       <Loader />
     </div>
   );

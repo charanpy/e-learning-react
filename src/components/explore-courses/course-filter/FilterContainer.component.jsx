@@ -13,6 +13,7 @@ const FilterContainer = () => {
 
   useEffect(() => {
     if (courses?.count >= 0) setTotalPage(courses?.count);
+    // eslint-disable-next-line
   }, [courses?.count]);
   if (isLoading) return <LoaderIndicator />;
   return (
