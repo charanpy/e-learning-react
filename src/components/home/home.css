@@ -1,203 +1,119 @@
-.home {
-  flex-direction: column;
-  margin-top: 40px;
-  margin-left: 100px;
+.main-container {
+  height: 90vh !important;
 }
-.navbar {
-  font-size: 40px;
-  width: 100%;
-  display: flex;
+
+.nav_home {
+  padding: 1rem 0.7rem;
+}
+
+.justify-center_home {
+  justify-content: center;
+}
+
+.justify-between_home {
   justify-content: space-between;
 }
-.leftnav {
-  width: 50%;
-  display: flex;
-}
-.title {
-  padding: 10px;
-  display: block;
-}
-.header {
-  font-size: 25px;
-  padding: 0;
-}
-.courseImg {
-  padding: 15px;
-}
-.para {
-  font-size: 14px;
-  font-weight: 500;
+
+.align-center_home {
+  align-items: center;
 }
 
-.rightnav {
-  padding: 20px;
-  /* width: 50%; */
-  /* display: none; */
-  /* float: right; */
+.fw-bold_home {
+  font-weight: bold;
 }
 
-.rightnav a {
-  padding: 15px;
+.fs-1_home {
+  font-size: 3.5rem;
+  font-weight: bold;
 }
-.button {
+
+.text-center_home {
+  text-align: center;
+}
+
+.ul_home li {
+  font-size: 3rem;
+  margin: 0 10px;
+}
+
+.nav-links {
+  display: none;
+}
+
+.dash_btn {
+  display: none;
+}
+
+.login-btn_home {
+  background-color: #ffbf23;
   border: 1px solid black;
-  border-radius: 7px;
-  background-color: #f59d05;
-  font-weight: 600;
-  font-size: 20px;
-  width: 120px;
-  height: 35px;
+  border-radius: 6px;
+  width: 10rem;
+  height: 4rem;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
-.bannerHome {
-  position: absolute;
-  top: 150px;
-  left: 200px;
+.dash-btn_home {
+  background-color: black;
+  color: white;
+  border-radius: 6px;
+  width: 12rem;
+  height: 4rem;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+.w-100 {
+  width: 100%;
+  padding: 2rem;
+}
+
+.content-text_home {
+  font-size: 5rem;
+}
+
+.content-text-secondary_home {
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-column_home {
   display: flex;
-}
-.head {
-  word-wrap: break-word;
-  display: inline-block;
-  font-style: bold;
-  font-size: 54px;
-  font-weight: 400;
-}
-.midname {
   flex-direction: column;
 }
-.bannerimg {
-  margin-left: 60px;
-  height: 500px;
-  width: 600px;
-}
-.bannerpara {
-  margin-top: 30px;
-  width: 400px;
-  font-size: 22px;
-  font-weight: 500;
-}
-.bannerbutton {
-  color: aliceblue;
-  border: 1px solid black;
-  border-radius: 7px;
-  background-color: #000000;
-  font-weight: 600;
-  font-size: 20px;
-  width: 120px;
-  height: 40px;
-  margin-top: 30px;
-}
-.capable {
-  margin-top: 80px;
-  display: flex;
-}
-.functions {
-  display: flex;
-  margin-left: 10px;
-}
-.function-1 {
-  width: 100px;
-  font-weight: 600;
-  font-size: 18px;
-  margin-left: 10px;
-}
-@media only screen and (max-width: 500px) {
-  .title {
-    padding: 0px;
+
+@media screen and (min-width: 700px) {
+  .main-container {
+    padding: 0 2.4rem;
+  }
+
+  .nav_home {
+    padding: 5rem 10rem;
+  }
+
+  .nav-links {
     display: block;
   }
-  .home {
-    flex-direction: row;
-    margin-top: 10px;
-    margin-left: 0px;
+
+  .banner_home {
+    order: 2;
   }
-  .bannerimg {
-    height: 300px;
-    width: 300px;
+
+  .w-lg-50 {
+    width: 50%;
   }
-  .banner {
-    flex-direction: column;
+
+  .dash_btn {
+    display: block;
   }
-  .head {
-    width: 100%;
-    word-wrap: break-word;
-    display: inline-block;
-    font-style: bold;
-    font-size: 30px;
-    font-weight: 800;
-  }
-  .bannerpara {
-    margin-top: 30px;
-    width: 300px;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  .banner {
-    position: absolute;
-    left: 20px;
-    top: 100px;
-    display: flex;
-  }
-  .rightnav {
+  .dash_btn_1 {
     display: none;
-  }
-  .capable {
-    margin-left: 30px;
-    margin-top: 50px;
-    display: block;
-  }
-  .function-1 {
-    width: 200px;
-    font-weight: 600;
-    font-size: 24px;
-    margin-left: 10px;
   }
 }
 
-@media (max-width: 500px) {
-  .capable {
-    display: none;
-  }
-  .leftnav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 850px) {
-  .banner {
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    display: flex;
-  }
-  .banner {
-    flex-direction: column;
-  }
-  .bannerimg {
-    height: 400px;
-    width: 400px;
-  }
-  .rightnav {
-    display: none;
-  }
-}
-@media only screen and (min-width: 850px) and (max-width: 1300px) {
-  .bannerHome {
-    position: absolute;
-    top: 170px;
-    left: 150px;
-    display: flex;
-  }
-  .home {
-    flex-direction: column;
-    margin-top: 40px;
-    margin-left: 60px;
-  }
-  .rightnav {
-    padding: 20px;
-    width: 75%;
-    float: right;
+@media screen and (min-width: 800px) {
+  .main-container {
+    padding: 0 3rem;
   }
 }

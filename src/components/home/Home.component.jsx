@@ -1,106 +1,89 @@
-import React from 'react';
-import './home.css';
-import courseImage from '../../assets/home-icon.jpg';
-import courseDetailsImage from '../../assets/banner.jpg';
-import function1 from '../../assets/function1.jpg';
-import Button from '../shared/button/Button.component';
-import { Link } from 'react-router-dom';
-import { useUser } from '../../context/UserProvider';
+import React from "react";
+import "./home.css";
+import courseImage from "../../assets/home-icon.jpg";
+import Banner from "../../assets/banner.png";
+import Button from "../shared/button/Button.component";
+import { Link } from "react-router-dom";
+import { useUser } from "../../context/UserProvider";
 
 const HomeComponent = () => {
   const { user } = useUser();
   return (
-    <div className='home'>
-      <div className='navbar'>
-        <div className='leftnav'>
-          <div className='courseImg'>
-            <img
-              alt='course'
-              width='40px'
-              height='40px'
-              className='courseDetailsImage'
-              src={courseImage}
-            />
-          </div>
-          <div className='title'>
-            <h1 className='header'>E-LEARNING</h1>
-            <p className='para'>learn.communication.collaborate</p>
+    <div className="main-container">
+      <nav className="flex-row justify-between_home nav_home">
+        {/* logo content */}
+        <div className="flex-row align-center_home">
+          <img alt="course" src={courseImage} />
+          {/* title section */}
+          <div style={{ marginLeft: "1rem" }}>
+            <p className="fs-1_home">E Learning</p>
+            <p>Communicate. Collaborate. Create.</p>
           </div>
         </div>
-
-        <div className='rightnav'>
-          <Link to='/dashboard'>Dashboard</Link>
-          <Link to='/explore'>Courses</Link>
-          <Link to='/about'>About</Link>
-          {!user?.email && (
-            <Link to='/auth'>
-              <Button className='button'>LOGIN</Button>
-            </Link>
-          )}
+        {/* nav links */}
+        <div className="nav-links">
+          <ul className="flex-row ul_home">
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/explore">Courses</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              {!user?.email && (
+                <Link to="/auth">
+                  <Button className="login-btn_home">LOGIN</Button>
+                </Link>
+              )}
+            </li>
+          </ul>
         </div>
-      </div>
-      .
-      <div>
-        <div className='bannerHome'>
-          <div className='midname'>
-            <div>
-              <h1 className='head'>Communication.</h1>
-            </div>
-            <div>
-              <h1 className='head'>Collaborative.Create.</h1>
-            </div>
-            <div>
-              <p className='bannerpara'>
-                WeDu provides an effective and powerful way to manage your
-                projects
+      </nav>
+      {/* main page content */}
+      <div
+        className="main-content-content flex-row align-center_home"
+        style={{ height: "100%" }}
+      >
+        {/* banner */}
+        <div className="w-100 w-lg-50 banner_home">
+          <div>
+            <img src={Banner} alt="Home Banner" className="w-100" />
+          </div>
+        </div>
+        {/* content */}
+        <div className="w-100 w-lg-50 flex-row justify-center_home">
+          <div className="flex-column_home">
+            <p className="content-text_home">Communicate.</p>
+            <p className="content-text_home">Collaborate Create.</p>
+            <div style={{ marginTop: "3rem" }}>
+              <p className="content-text-secondary_home">
+                WeDu provides an effective and powerful
+              </p>
+              <p className="content-text-secondary_home">
+                way to manage your projects
               </p>
             </div>
-            <div>
-              <Link to={user?.email ? '/dashboard' : '/auth'}>
-                <Button className='bannerbutton'>
-                  {user?.email ? 'Dashboard' : 'Get Started'}
-                </Button>
+            {/* dashboad btn */}
+            <div className="dash_btn_1" style={{ marginTop: "3rem" }}>
+              {!user?.email ? (
+                <Link to="/auth">
+                  <Button className="login-btn_home">LOGIN</Button>
+                </Link>
+              ) : (
+                <Link to="/dashboard">
+                  <Button className="dash-btn_home">Dashboard</Button>
+                </Link>
+              )}
+            </div>
+
+            <div className="dash_btn" style={{ marginTop: "3rem" }}>
+              <Link to="/dashboard">
+                <Button className="dash-btn_home">Dashboard</Button>
               </Link>
             </div>
-            <div className='capable'>
-              <div className='functions'>
-                <img
-                  alt='function'
-                  width='40px'
-                  height='40px'
-                  src={function1}
-                />
-                <p className='function-1'>speed & security</p>
-              </div>
-              <div className='functions'>
-                <img
-                  alt='function'
-                  width='40px'
-                  height='40px'
-                  src={function1}
-                />
-                <p className='function-1'>speed & security</p>
-              </div>
-              <div className='functions'>
-                <img
-                  width='40px'
-                  height='44px'
-                  src={function1}
-                  alt='function'
-                />
-                <p className='function-1'>speed & security</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <img
-              className='bannerimg'
-              width='400px'
-              height='300px'
-              src={courseDetailsImage}
-              alt='banner'
-            />
           </div>
         </div>
       </div>
