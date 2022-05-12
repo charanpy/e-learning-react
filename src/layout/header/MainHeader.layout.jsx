@@ -13,11 +13,11 @@ const MainHeader = ({ handleToggle, header }) => {
 
         <h1 className='header'>{header}</h1>
       </div>
-      <div className='profileImage flex-row centerAll'>
-        <Link to='/profile'>
+      <Link to='/profile'>
+        <div className='profileImage flex-row centerAll'>
           <p>P</p>
-        </Link>
-      </div>
+        </div>
+      </Link>
     </header>
   );
 };

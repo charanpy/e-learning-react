@@ -37,16 +37,18 @@ const CourseButton = ({ id }) => {
 
     try {
       buttonRef.current.disabled = true;
-      const data = await request(
+      const session = await request(
         '/course/checkout',
         'POST',
         { courseId: id },
         true,
         true
       );
-      if (data) {
+      if (session?.[0]) {
         client.invalidateQueries('my-course');
-        (await stripePromise).redirectToCheckout({ sessionId: data });
+        (await stripePromise).redirectToCheckout({
+          sessionId: session?.[0],
+        });
       }
     } catch (error) {
     } finally {

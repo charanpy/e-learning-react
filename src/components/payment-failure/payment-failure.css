@@ -1,0 +1,66 @@
+.orderImage {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.orderContainer {
+  line-height: 2;
+  justify-content: space-around;
+}
+
+.orderTitle {
+  font-size: 1.8rem;
+  color: var(--light-900);
+  font-weight: 500;
+}
+
+.orderDetail,
+.orderDetailHeader {
+  font-size: 1.7rem;
+  color: var(--light-700);
+  font-weight: 500;
+}
+
+.orderDetailHeader {
+  font-weight: 600;
+}
+.orderForm {
+  line-height: 2;
+}
+
+.orderLabel {
+  font-weight: 600;
+  color: var(--light-600);
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.orderInput {
+  padding: 0.9rem;
+  border: 1px solid var(--light-300);
+  background: white;
+  font-size: 1.5rem;
+  width: 25rem;
+  border-radius: 5px;
+  outline: none;
+}
+
+.orderBuy {
+  padding: 0.9rem 1.5rem;
+  color: white;
+  border-radius: 50px;
+  background: var(--blue-600);
+  font-size: 1.5rem;
+  margin-top: 1.3rem;
+}
+
+.issueBtn {
+  padding: 0.9rem;
+  font-size: 1.5rem;
+  width: 25rem;
+  border-radius: 5px;
+  background: #dc2626;
+  color: white;
+}

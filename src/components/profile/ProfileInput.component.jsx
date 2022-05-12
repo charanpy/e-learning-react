@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import './profile.css';
 
 const ProfileInput = forwardRef(
   ({ label, type = 'text', value, display = true }, ref) => {

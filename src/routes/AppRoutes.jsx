@@ -31,6 +31,9 @@ const ExploreBooks = lazy(() =>
 );
 const AuthorPage = lazy(() => import('../pages/authors/Authors.page'));
 const MaterialsPage = lazy(() => import('../pages/materials/Materials.page'));
+const PaymentFailurePage = lazy(() =>
+  import('../components/payment-failure/PaymentFailure.page')
+);
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -182,6 +185,14 @@ const AppRoutes = () => {
               }
             />
 
+            <Route
+              path='/course/failure/:id'
+              element={
+                <PageTransition>
+                  <PaymentFailurePage />
+                </PageTransition>
+              }
+            />
             <Route
               path='*'
               element={

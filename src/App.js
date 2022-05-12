@@ -1,9 +1,11 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { Elements } from '@stripe/react-stripe-js';
 import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import UserProvider from './context/UserProvider';
 import AppRoutes from './routes/AppRoutes';
+import stripe from './lib/stripe';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const client = new QueryClient({
   defaultOptions: {
@@ -20,7 +22,7 @@ const App = () => {
     <QueryClientProvider client={client}>
       <ReactQueryDevtools initialIsOpen={true} />
       <UserProvider>
-        <AppRoutes />
+          <AppRoutes />
       </UserProvider>
       <ToastContainer theme='colored' />
     </QueryClientProvider>

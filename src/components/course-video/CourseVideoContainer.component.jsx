@@ -66,7 +66,11 @@ const CourseVideoContainer = ({ videos, course, materials }) => {
           setSelectedVideo={setSelectedVideo}
           videos={videos}
           selectedVideo={selectedVideo}
-          className='videoContentFull'
+          className='asideVideoContent'
+          course={course?._id}
+          currPage={
+            params.get('video') ? Math.floor(params.get('video') / 11) : 0
+          }
         />
       </CourseVideoTabs>
     </>
