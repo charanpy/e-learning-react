@@ -34,6 +34,7 @@ const MaterialsPage = lazy(() => import('../pages/materials/Materials.page'));
 const PaymentFailurePage = lazy(() =>
   import('../components/payment-failure/PaymentFailure.page')
 );
+const OrderPage = lazy(() => import('../pages/order/Order.page'));
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -190,6 +191,14 @@ const AppRoutes = () => {
               element={
                 <PageTransition>
                   <PaymentFailurePage />
+                </PageTransition>
+              }
+            />
+            <Route
+              path='/orders'
+              element={
+                <PageTransition>
+                  <OrderPage />
                 </PageTransition>
               }
             />

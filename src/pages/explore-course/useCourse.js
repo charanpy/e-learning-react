@@ -10,7 +10,6 @@ const filterRequest = (filter, code, page) => {
 };
 
 const useCourse = (page) => {
-  console.log('container');
   const [filter, setFilter] = useState({
     code: '',
     title: '',

@@ -8,7 +8,6 @@ const useProfile = (dob) => {
   const nameRef = useRef();
 
   useEffect(() => {
-    console.log(formatDate(dob, true));
     if (dobRef?.current) dobRef.current.value = formatDate(dob, true);
     // eslint-disable-next-line
   }, []);

@@ -10,8 +10,6 @@ const Container = ({ header, showNav }) => {
     setOpen((prev) => !prev);
   };
 
-  console.log(open);
-
   return (
     <>
       {showNav && <Navbar />}

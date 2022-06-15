@@ -1,7 +1,6 @@
 import React from 'react';
 
 const CourseVideo = ({ selectedVideo, videos }) => {
-  console.log('Video');
   return (
     <div className='video-detail-container'>
       <video

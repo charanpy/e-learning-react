@@ -13,7 +13,7 @@ const getHeaders = (method, isAuth = false) => {
 };
 
 export const apiURL =
- process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v2';
+   process.env.REACT_APP_BASE_URL || 'http://localhost:3001/api/v2';
 
 const request = async (
   endpoint,

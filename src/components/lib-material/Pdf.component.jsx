@@ -3,10 +3,10 @@ import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
 import Loader from '../../components/shared/loader/Loader.component';
 import { errorToaster } from '../../lib/toast';
 import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
+// pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.js';
+pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Pdf = ({ file }) => {
-  console.log(file, 45);
   const [numPages, setNumPages] = useState(null);
 
   function onDocumentLoadSuccess({ numPages }) {

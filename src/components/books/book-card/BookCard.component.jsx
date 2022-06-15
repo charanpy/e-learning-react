@@ -26,7 +26,6 @@ export const formatDueDate = (date, issue = false) => {
 };
 
 const BookCard = memo(({ book, expiryDate, issueDate }) => {
-  console.log('1');
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {

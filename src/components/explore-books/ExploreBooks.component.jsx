@@ -11,7 +11,6 @@ import BookCardHeader from '../books/book-card/BookCardHeader.component';
 import BookCards from '../books/book-card/BookCard.component';
 
 const ExploreBooksComponent = () => {
-  console.log('render');
   const [params] = useSearchParams();
   const [page, totalPage, handlePrev, handleNext, setTotalPage] = usePage();
   const { data, isLoading } = useQuery(
@@ -23,8 +22,6 @@ const ExploreBooksComponent = () => {
     if (data?.count !== totalPage) setTotalPage(data?.count);
     // eslint-disable-next-line
   }, [data?.count]);
-
-  console.log(totalPage, 8888);
 
   if (isLoading) return <LoaderIndicator />;
 

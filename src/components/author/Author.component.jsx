@@ -14,7 +14,6 @@ const Author = () => {
 
   useEffect(() => {
     if (data?.count >= 0) {
-      console.log('Hey', data?.count);
       setTotalPage(data?.count);
     }
     // eslint-disable-next-line

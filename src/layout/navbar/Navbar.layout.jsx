@@ -5,6 +5,7 @@ import DashboardSVG from '../../components/shared/svg/Dashboard.svg';
 import ExploreSvg from '../../components/shared/svg/Explore.svg';
 import MyCourseSVG from '../../components/shared/svg/MyCourse.svg';
 import NoteSVG from '../../components/shared/svg/Note.svg';
+import OrderSVG from '../../components/shared/svg/Order.svg';
 import ProfileSVG from '../../components/shared/svg/Profile.svg';
 import VideoSVG from '../../components/shared/svg/Video.svg';
 import { getItem } from '../../lib/token';
@@ -53,6 +54,10 @@ const CourseDashboardLinks = () => (
     ) : (
       ''
     )}
+    <CustomLink to='/orders'>
+      <OrderSVG className='navIcon' />
+      Orders
+    </CustomLink>
   </>
 );
 

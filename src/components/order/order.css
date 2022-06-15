@@ -1,0 +1,14 @@
+.paid {
+  font-size: inherit;
+  color: #22c55e;
+}
+
+.cancel {
+  font-size: inherit;
+  color: #dc2626;
+}
+
+.orderBtn {
+  text-decoration: underline;
+  margin: 2rem 1rem 0 0;
+}

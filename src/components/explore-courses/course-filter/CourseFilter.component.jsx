@@ -6,7 +6,6 @@ import FilterInput from './FilterInput.component';
 import FilterWrapper from './FilterWrapper.component';
 
 const CourseFilter = ({ setFilter, setInitial }) => {
-  console.log('course filter');
   const [toggle, setToggle] = useState(false);
   const titleRef = useRef();
   const codeRef = useRef();

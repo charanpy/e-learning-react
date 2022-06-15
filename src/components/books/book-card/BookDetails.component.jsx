@@ -23,7 +23,6 @@ const BookInfo = ({ header, value, ...props }) => {
 };
 
 const BookDetails = ({ open, book, toggleModal, category }) => {
-  console.log(book);
   return (
     <Slider open={open} variants={opacityModal} className='bookDetailPopup'>
       <div className='bookDetailWrap'>

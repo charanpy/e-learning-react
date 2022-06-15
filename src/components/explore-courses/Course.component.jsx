@@ -29,6 +29,7 @@ const Course = ({ courses, slice = 4, header = 'Courses' }) => {
                 <figcaption>
                   <h1 className='courseName'>{course?.courseTitle}</h1>
                   <p className='courseInstructors'>{course?.instructors}</p>
+                  {}
                 </figcaption>
               </figure>
             </Link>

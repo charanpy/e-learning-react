@@ -5,6 +5,9 @@ import BooksSVG from '../shared/svg/Books.svg';
 import CloseSVG from '../shared/svg/Close.svg';
 const Pdf = lazy(() => import('./Pdf.component'));
 
+const getUrl = (file) =>
+  `http://docs.google.com/gview?url=${file}&embedded=true`;
+
 const MaterialDetail = ({
   open,
   description,
@@ -21,10 +24,14 @@ const MaterialDetail = ({
       if (restrict) {
         setLoading((toggle) => !toggle);
         const res = await refetch();
-        if (res?.status === 'success') return setMaterial((toggle) => !toggle);
+        if (res?.status === 'success') {
+          return setMaterial((toggle) => !toggle);
+          // return window.open(getUrl(file || res?.data?.file?.url));
+        }
         return errorToaster('Maximum view count reached for requested PDF');
       }
       setMaterial((toggle) => !toggle);
+      // window.open(getUrl(file || data?.file?.url));
     } catch (error) {
       if (loading) setLoading(false);
     } finally {

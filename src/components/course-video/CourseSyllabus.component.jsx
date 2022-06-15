@@ -101,7 +101,6 @@ const CourseSyllabus = ({
   );
   if (isLoading) return <LoaderIndicator />;
 
-  console.log(data);
   return (
     <div className={`flex-col video-content-list ${className}`}>
       <Pagination

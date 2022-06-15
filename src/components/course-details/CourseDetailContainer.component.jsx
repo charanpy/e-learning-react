@@ -15,7 +15,6 @@ const CourseDetailContainer = () => {
 
   if (isLoading) return <LoaderIndicator />;
 
-  console.log(data);
   return (
     <>
       <CourseBanner course={data} />
